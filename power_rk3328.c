@@ -185,7 +185,7 @@ static void rk_power_init(struct power_module *module)
     }
     if(DEBUG_EN)ALOGI("cpu_clus0_freqs:%s\n",cpu_clus0_freqs);
 
-    freq_split = strtok(cpu_clus0_freqs," ");
+/*    freq_split = strtok(cpu_clus0_freqs," ");
     strcpy(cpu_clust0_available_freqs[0],freq_split);
     if(DEBUG_EN)ALOGI("cpu_clust0 available freq[0]:%s\n",cpu_clust0_available_freqs[0]);
     for(i=1;freq_split=strtok(NULL," ");i++){
@@ -194,7 +194,7 @@ static void rk_power_init(struct power_module *module)
     }
     cpu_clust0_max_index = i-2;
     if(DEBUG_EN)ALOGI("cpu_clust0_max_index:%d\n",cpu_clust0_max_index);
-
+*/
     /*********************** obtain gpu available freqs **************************/
     if(fd = open (GPU_AVAIL_FREQ,O_RDONLY)){
         count = read(fd,gpu_freqs,sizeof(gpu_freqs)-1);
@@ -206,7 +206,7 @@ static void rk_power_init(struct power_module *module)
     }
     if(DEBUG_EN)ALOGI("gpu_freqs:%s\n",gpu_freqs);
 
-    freq_split = strtok(gpu_freqs," ");
+/*    freq_split = strtok(gpu_freqs," ");
     strcpy(gpu_available_freqs[0],freq_split);
     if(DEBUG_EN)ALOGI("gpu available freq[0]:%s\n",gpu_available_freqs[0]);
     for(i=1;freq_split=strtok(NULL," ");i++){
@@ -215,6 +215,7 @@ static void rk_power_init(struct power_module *module)
     }
     gpu_max_index = i-1;
     if(DEBUG_EN)ALOGI("gpu_max_index:%d\n",gpu_max_index);
+*/
 }
 
 /*performs power management actions upon the
